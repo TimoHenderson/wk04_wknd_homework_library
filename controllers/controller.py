@@ -35,5 +35,6 @@ def book(index):
 
 @app.route("/books/<index>", methods=["POST"])
 def check_book_in_or_out(index):
-    book = library.book_list[int(index)]
-    return render_template("book-page.html", title="Books", book=book)
+    check_out = request.form["check_out"]
+    library.check_book_in_or_out(int(index), int(check_out))
+    return redirect("/books")

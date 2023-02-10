@@ -7,6 +7,13 @@
 
 {% if books %}
 {% set book_index = books.index(book) %}
+<form action="/books/{{ book_index }}" method="post">
+    <label for="check_out">Check out:</label>
+    <input type="radio" name="check_out" id="check_out" value="1">
+    <label for="check_in">Check in:</label>
+    <input type="radio" name="check_out" id="check_in" value="0">
+    <input type="submit" value="Update">
+</form>
 
 <form action="/books/{{ book_index}}">
     <input type="submit" value="View Details">
