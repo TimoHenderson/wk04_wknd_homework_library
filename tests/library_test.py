@@ -63,3 +63,16 @@ class TestLibrary(unittest.TestCase):
         actual = self.full_library.book_list[0].is_checked_out
         expected = False
         self.assertEqual(actual, expected)
+
+    def test_can_update_book(self):
+        self.full_library.update_book(1, "The Great Gatsby", "Someone", "Horror")
+        book = self.fuill_library.book_list[1]
+        actual_title = book.title
+        expected_title = "The Great Gatsby"
+        self.assertEqual(actual_title, expected_title)
+        actual_author = book.author
+        expected_author = "Someone"
+        self.assertEqual(actual_author, expected_author)
+        actual_genre = book.genre
+        expected_genre = "Horror"
+        self.assertEqual(actual_genre, expected_genre)

@@ -1,11 +1,3 @@
-{% set checked_out = book.is_checked_out %}
-<p>{{ book.title }} by {{ book.author }} -- {{ book.genre }} -
-    {% if checked_out %}
-    not available
-    {% else %}
-    available
-    {% endif %}</p>
-
 {% if books %}
 {% set book_index = books.index(book) %}
 {% set request_origin = '/books' %}
@@ -14,21 +6,42 @@
 {% set request_origin = '/books/' + book_index %}
 {% endif %}
 
-<form action="/books/{{ book_index }}" method="post">
-    <input type="hidden" name="request_origin" id="request_origin" value="{{ request.path }}">
-    <label for="check_out">Check out:</label>
-    <input type="radio" name="check_out" id="check_out" value="1" {% if checked_out %} checked {% endif %}>
-    <label for="check_in">Check in:</label>
-    <input type="radio" name="check_out" id="check_in" value="0" {% if not checked_out %} checked {% endif %}>
-    <input type="submit" value="Update">
-</form>
+{% set checked_out = book.is_checked_out %}
 
-{% if books %}
-<form action="/books/{{ book_index}}">
-    <input type="submit" value="View Details">
-</form>
+{% if checked_out %}
+{% set availability = " Not Available" %}
+{% else %}
+{% set availability = "Available" %}
 {% endif %}
 
-<form action="/books/delete/{{ book_index }}" method="post">
-    <input type="submit" value="Delete">
-</form>
+
+
+
+<article class="book">
+
+    <h3>{{ book.title }}</h3>
+    <p>by {{ book.author }}</p>
+    <p>{{ book.genre }}</p>
+    <p>{{ availability }}</p>
+    <form action="/books/{{ book_index }}" method="post">
+        <input type="hidden" name="request_origin" id="request_origin" value="{{ request.path }}">
+        <div class="check-out-radio">
+            <label for="check_in">Check in:</label>
+            <input type="radio" name="check_out" id="check_in" value="0" {% if not checked_out %} checked {% endif %}>
+            <label for="check_out">Check out:</label>
+            <input type="radio" name="check_out" id="check_out" value="1" {% if checked_out %} checked {% endif %}>
+        </div>
+        <div class="book-buttons">
+            <input type="submit" value="Update">
+    </form>
+    {% if books %}
+    <form action="/books/{{ book_index }}">
+        <input type="submit" value="View">
+    </form>
+    {% endif %}
+    <form action="/books/delete/{{ book_index }}" method="post">
+        <input type="submit" value="Delete">
+    </form>
+    </div>
+
+</article>

@@ -1,0 +1,98 @@
+body {
+    background-color: #F4EDEA;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #6B4B3E;
+    color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #628395;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+main {
+    margin: 2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.book {
+    width: 12rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hwb(231 4% 69%);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.book>h3 {
+    text-align: center;
+}
+
+.book>form {
+    font-size: small;
+}
+
+.book-buttons {
+    display: flex;
+    justify-content: center;
+
+}
+
+.check-out-radio>input {
+    appearance: none;
+
+    border-radius: 50%;
+    width: 0.8rem;
+    height: 0.8rem;
+
+    border: 2px solid white;
+    transition: 0.1s all linear;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.6rem;
+
+    position: relative;
+    top: 4px;
+}
+
+.check-out-radio {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.check-out-radio>input:checked {
+    background-color: white;
+}
