@@ -21,6 +21,12 @@ def add_book():
     return redirect("/books")
 
 
+@app.route("/books/delete/<index>", methods=["POST"])
+def remove_book(index):
+    library.remove_book_by_index(int(index))
+    return redirect("/books")
+
+
 @app.route("/books/<index>")
 def book(index):
     book = library.book_list[int(index)]

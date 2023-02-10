@@ -1,1 +1,6 @@
 <p>{{ book.title }} by {{ book.author }} -- {{ book.genre }}</p>
+{% if books %}
+<form action="/books/delete/{{ books.index(book) }}" method="post">
+    <input type="submit" value="Delete">
+</form>
+{% endif %}
