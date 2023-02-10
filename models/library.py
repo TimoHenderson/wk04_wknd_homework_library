@@ -11,3 +11,12 @@ class Library:
 
     def remove_book_by_index(self, index):
         return self.book_list.pop(index)
+
+
+library = Library(
+    [
+        Book("Popular Music Culture", "Roy Shuker", "Music"),
+        Book("Sound Design", "David Sonnenschein", "Audio"),
+        Book("The Hobbit", "JRR Tolkien", "Fantasy"),
+    ]
+)

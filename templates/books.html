@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Books</h1>
+{% for book in books %}
+
+{% include 'book.html' %}
+
+{% endfor %}
+{% endblock content %}
