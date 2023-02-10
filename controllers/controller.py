@@ -39,3 +39,11 @@ def check_book_in_or_out(index):
     request_origin = request.form["request_origin"]
     library.check_book_in_or_out(int(index), int(check_out))
     return redirect(request_origin)
+
+
+@app.route("/books/update/<index>", methods=["POST"])
+def update_book(index):
+    form = request.form
+    request_origin = request.form["request_origin"]
+    library.update_book(int(index), form["title"], form["author"], form["genre"])
+    return redirect(request_origin)

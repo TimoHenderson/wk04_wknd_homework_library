@@ -1,0 +1,27 @@
+<section class="book">
+    <h2>Edit Book</h2>
+    <form action="/books/update/{{ book_index }}" method="post">
+        <input type="hidden" name="request_origin" id="request_origin" value="{{ request.path }}">
+
+        <p>
+            <label for="title">Title: </label> <br>
+            <input type="text" name="title" id="title" value="{{ book.title }}">
+        </p>
+        <p>
+            <label for="author">Author: </label> <br>
+            <input type="text" name="author" id="author" value="{{ book.author }}">
+        </p>
+        <p>
+            <label for="genre">Genre: </label><br>
+            <input type="text" name="genre" id="genre" value="{{ book.genre }}">
+        </p>
+        <p>
+        <div class="book-buttons">
+            <input type="submit" value="Save Changes">
+            <span class="button-label-container"><label for="show-edit">Cancel</label></span>
+        </div>
+
+
+        </p>
+    </form>
+</section>

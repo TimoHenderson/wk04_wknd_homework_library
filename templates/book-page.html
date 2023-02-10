@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
+{% set book_index = index %}
+{% set request_origin = '/books/' + book_index %}
 <h1>Book info</h1>
 
+<div id="show-edit-form">
+    <input type="checkbox" name="show-edit" id="show-edit">
+    {% include 'book.html' %}
 
-{% include 'book.html' %}
+
+    <article id="edit-form">
+        {% include 'edit-form.html' %}
+    </article>
+</div>
 
 
 {% endblock content %}

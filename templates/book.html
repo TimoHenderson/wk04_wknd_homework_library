@@ -1,9 +1,6 @@
 {% if books %}
 {% set book_index = books.index(book) %}
 {% set request_origin = '/books' %}
-{% else %}
-{% set book_index = index %}
-{% set request_origin = '/books/' + book_index %}
 {% endif %}
 
 {% set checked_out = book.is_checked_out %}
@@ -38,6 +35,14 @@
     <form action="/books/{{ book_index }}">
         <input type="submit" value="View">
     </form>
+    {% else %}
+
+
+    <div class="button-label-container">
+        <label for="show-edit">Edit</label>
+    </div>
+
+
     {% endif %}
     <form action="/books/delete/{{ book_index }}" method="post">
         <input type="submit" value="Delete">
