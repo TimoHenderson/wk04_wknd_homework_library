@@ -15,7 +15,7 @@ class Library:
 
 library = Library(
     [
-        Book("Popular Music Culture", "Roy Shuker", "Music"),
+        Book("Popular Music Culture", "Roy Shuker", "Music", True),
         Book("Sound Design", "David Sonnenschein", "Audio"),
         Book("The Hobbit", "JRR Tolkien", "Fantasy"),
     ]

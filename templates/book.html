@@ -1,4 +1,9 @@
-<p>{{ book.title }} by {{ book.author }} -- {{ book.genre }}</p>
+<p>{{ book.title }} by {{ book.author }} -- {{ book.genre }} -
+    {% if book.is_checked_out %}
+    not available
+    {% else %}
+    available
+    {% endif %}</p>
 
 {% if books %}
 {% set book_index = books.index(book) %}
