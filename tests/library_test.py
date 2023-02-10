@@ -9,7 +9,7 @@ class TestLibrary(unittest.TestCase):
 
         self.book_list = [
             Book("Popular Music Culture", "Roy Shuker", "Music"),
-            Book("Sound Design", "David Sonnenschein", "Audio"),
+            Book("Sound Design", "David Sonnenschein", "Audio", True),
             Book("The Hobbit", "JRR Tolkien", "Fantasy"),
         ]
 
@@ -45,3 +45,15 @@ class TestLibrary(unittest.TestCase):
         actual_length = len(self.full_library.book_list)
         expected_length = 2
         self.assertEqual(actual_length, expected_length)
+
+    def test_can_check_book_in(self):
+        self.full_library.check_book_in_or_out(1)
+        actual = self.full_library.book_list[1].is_checked_out
+        expected = False
+        self.assertEqual(actual, expected)
+
+    def test_can_check_book_out(self):
+        self.full_library.check_book_in_or_out(0)
+        actual = self.full_library.book_list[0].is_checked_out
+        expected = True
+        self.assertEqual(actual, expected)

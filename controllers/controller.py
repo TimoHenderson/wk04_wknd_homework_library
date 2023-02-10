@@ -31,3 +31,9 @@ def remove_book(index):
 def book(index):
     book = library.book_list[int(index)]
     return render_template("book-page.html", title="Books", book=book)
+
+
+@app.route("/books/<index>", methods=["POST"])
+def check_book_in_or_out(index):
+    book = library.book_list[int(index)]
+    return render_template("book-page.html", title="Books", book=book)
