@@ -8,3 +8,6 @@ class Library:
     def add_book(self, title, author, genre):
         new_book = Book(title, author, genre)
         self.book_list.append(new_book)
+
+    def remove_book_by_index(self, index):
+        return self.book_list.pop(index)

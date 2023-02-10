@@ -37,3 +37,11 @@ class TestLibrary(unittest.TestCase):
         actual_genre = actual_book.genre
         expected_genre = "Children"
         self.assertEqual(actual_genre, expected_genre)
+
+    def test_can_remove_book_by_index(self):
+        expected_book = self.book_list[2]
+        actual_book = self.full_library.remove_book_by_index(2)
+        self.assertEqual(actual_book, expected_book)
+        actual_length = len(self.full_library.book_list)
+        expected_length = 2
+        self.assertEqual(actual_length, expected_length)
