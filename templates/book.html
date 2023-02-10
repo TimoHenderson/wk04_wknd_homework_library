@@ -8,7 +8,14 @@
 
 {% if books %}
 {% set book_index = books.index(book) %}
+{% set request_origin = '/books' %}
+{% else %}
+{% set book_index = index %}
+{% set request_origin = '/books/' + book_index %}
+{% endif %}
+
 <form action="/books/{{ book_index }}" method="post">
+    <input type="hidden" name="request_origin" id="request_origin" value="{{ request.path }}">
     <label for="check_out">Check out:</label>
     <input type="radio" name="check_out" id="check_out" value="1" {% if checked_out %} checked {% endif %}>
     <label for="check_in">Check in:</label>
@@ -16,10 +23,12 @@
     <input type="submit" value="Update">
 </form>
 
+{% if books %}
 <form action="/books/{{ book_index}}">
     <input type="submit" value="View Details">
 </form>
+{% endif %}
+
 <form action="/books/delete/{{ book_index }}" method="post">
     <input type="submit" value="Delete">
 </form>
-{% endif %}

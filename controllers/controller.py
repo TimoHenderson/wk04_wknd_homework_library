@@ -30,11 +30,12 @@ def remove_book(index):
 @app.route("/books/<index>")
 def book(index):
     book = library.book_list[int(index)]
-    return render_template("book-page.html", title="Books", book=book)
+    return render_template("book-page.html", title="Books", book=book, index=index)
 
 
 @app.route("/books/<index>", methods=["POST"])
 def check_book_in_or_out(index):
     check_out = request.form["check_out"]
+    request_origin = request.form["request_origin"]
     library.check_book_in_or_out(int(index), int(check_out))
-    return redirect("/books")
+    return redirect(request_origin)
