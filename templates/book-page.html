@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>All Books</h1>
-{% for book in books %}
+<h1>Book info</h1>
+
 
 {% include 'book.html' %}
 
-{% endfor %}
 
-{% include 'book-form.html' %}
 {% endblock content %}

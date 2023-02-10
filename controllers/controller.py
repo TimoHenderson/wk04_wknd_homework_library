@@ -11,5 +11,17 @@ def index():
 @app.route("/books")
 def books():
     book_list = library.book_list
-    print(book_list)
     return render_template("books.html", title="Books", books=book_list)
+
+
+@app.route("/books", methods=["POST"])
+def add_book():
+    form = request.form
+    library.add_book(form["title"], form["author"], form["genre"])
+    return redirect("/books")
+
+
+@app.route("/books/<index>")
+def book(index):
+    book = library.book_list[int(index)]
+    return render_template("book-page.html", title="Books", book=book)
