@@ -19,6 +19,12 @@ class Library:
         else:
             book.is_checked_out = not book.is_checked_out
 
+    def update_book(self, index, title, author, genre):
+        book = self.book_list[index]
+        book.title = title
+        book.author = author
+        book.genre = genre
+
 
 library = Library(
     [

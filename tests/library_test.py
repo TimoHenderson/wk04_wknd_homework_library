@@ -66,7 +66,7 @@ class TestLibrary(unittest.TestCase):
 
     def test_can_update_book(self):
         self.full_library.update_book(1, "The Great Gatsby", "Someone", "Horror")
-        book = self.fuill_library.book_list[1]
+        book = self.full_library.book_list[1]
         actual_title = book.title
         expected_title = "The Great Gatsby"
         self.assertEqual(actual_title, expected_title)
