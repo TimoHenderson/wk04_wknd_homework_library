@@ -57,3 +57,9 @@ class TestLibrary(unittest.TestCase):
         actual = self.full_library.book_list[0].is_checked_out
         expected = True
         self.assertEqual(actual, expected)
+
+    def test_can_check_book_in__already_checked_in(self):
+        self.full_library.check_book_in_or_out(0, False)
+        actual = self.full_library.book_list[0].is_checked_out
+        expected = False
+        self.assertEqual(actual, expected)

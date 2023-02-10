@@ -12,9 +12,12 @@ class Library:
     def remove_book_by_index(self, index):
         return self.book_list.pop(index)
 
-    def check_book_in_or_out(self, index):
+    def check_book_in_or_out(self, index, check_out=None):
         book = self.book_list[index]
-        book.is_checked_out = not book.is_checked_out
+        if check_out != None:
+            book.is_checked_out = check_out
+        else:
+            book.is_checked_out = not book.is_checked_out
 
 
 library = Library(
