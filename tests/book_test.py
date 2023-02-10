@@ -4,7 +4,7 @@ from models.book import Book
 
 class TestBook(unittest.TestCase):
     def setUp(self):
-        self.book_1 = Book("Sound Design", "David Sonnenschein")
+        self.book_1 = Book("Sound Design", "David Sonnenschein", "Audio")
 
     def test_has_title(self):
         actual = self.book_1.title
