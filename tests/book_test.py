@@ -20,3 +20,8 @@ class TestBook(unittest.TestCase):
         actual = self.book_1.genre
         expected = "Audio"
         self.assertEqual(actual, expected)
+
+    def test_has_is_checked_out(self):
+        actual = self.book_1.is_checked_out
+        expected = False
+        self.assertEqual(actual, expected)
