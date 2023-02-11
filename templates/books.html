@@ -7,7 +7,9 @@
         {% for book in books %}
         {% include 'book.html' %}
         {% endfor %}
+        <input type="checkbox" id="show-new-book" hidden>
         {% include 'book-form.html' %}
+        {% include 'new-book-trigger.html' %}
     </div>
 </section>
 

@@ -1,5 +1,5 @@
-<section class="book">
-    <h2>Add New</h2>
+<section class="book new-book-form">
+    <h3>Add New</h3>
     <form action="/books" method="post">
         <p>
             <label for="title">Title: </label> <br>
@@ -14,7 +14,12 @@
             <input type="text" name="genre" id="genre">
         </p>
         <p>
+        <div class="book-buttons">
             <input type="submit" value="Add Book">
+            <span class="button-label-container">
+                <label for="show-new-book">Cancel</label>
+            </span>
+        </div>
         </p>
     </form>
 </section>
