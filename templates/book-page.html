@@ -3,7 +3,7 @@
 {% set book_index = index %}
 {% set request_origin = '/books/' + book_index %}
 <h1>Book info</h1>
-
+<p><a href="/books" class="breadcrumb">&lt;back</a></p>
 <div id="show-edit-form">
     <input type="checkbox" name="show-edit" id="show-edit">
     {% include 'book.html' %}
