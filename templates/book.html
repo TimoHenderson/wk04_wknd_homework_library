@@ -11,11 +11,10 @@
 {% set availability = "Available" %}
 {% endif %}
 
-
-<div id="show-edit-form">
+<div>
     <input
       class="edit-toggle"
-      type="checkbox"
+      type="radio"
       name="show-edit"
       id="show-edit{{book_index}}"
       hidden
@@ -36,7 +35,7 @@
             <input type="radio" name="check_out" id="check_out{ book_index}}" value="1" {% if checked_out %} checked {% endif %}>
         </div>
         <div class="book-buttons">
-            <input type="submit" value="Update">
+            <input type="submit" value="Check">
     </form>
     {% if books %}
     <form action="/books/{{ book_index }}">

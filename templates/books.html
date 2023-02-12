@@ -1,16 +1,20 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1>All Books</h1>
 <section class="all-books">
+  <input
+    class="edit-toggle"
+    type="radio"
+    name="show-edit"
+    id="hide-edit"
+    hidden
+    checked
+  />
 
-    <div class="book-list">
-        {% for book in books %}
-        {% include 'book.html' %}
-        {% endfor %}
-        <input type="checkbox" id="show-new-book" hidden>
-        {% include 'book-form.html' %}
-        {% include 'new-book-trigger.html' %}
-    </div>
+  <div class="book-list">
+    {% for book in books %} {% include 'book.html' %} {% endfor %}
+    <input type="checkbox" id="show-new-book" hidden />
+    {% include 'book-form.html' %} {% include 'new-book-trigger.html' %}
+  </div>
 </section>
 
 {% endblock content %}

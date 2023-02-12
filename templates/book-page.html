@@ -2,5 +2,11 @@
 set request_origin = '/books/' + book_index %}
 <h1>Book info</h1>
 <p><a href="/books" class="breadcrumb">&lt;back</a></p>
-
+<input
+  class="edit-toggle"
+  type="radio"
+  name="show-edit"
+  id="hide-edit"
+  hidden
+/>
 {% include 'book.html' %} {% endblock content %}

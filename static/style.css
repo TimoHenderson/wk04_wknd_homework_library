@@ -92,6 +92,9 @@ a:hover {
     text-align: center;
     padding-top: 2.5rem;
 }
+.new-book-trigger>.new-book-text{
+    font-size: medium;
+}
 
 .new-book-form {
     display: none;
@@ -132,7 +135,7 @@ a:hover {
     height: 0.8rem;
 
     border: 2px solid white;
-    transition: 0.1s all linear;
+    
     margin-right: 0.5rem;
     margin-left: 0.5rem;
     margin-bottom: 0.3rem;
@@ -148,6 +151,8 @@ a:hover {
 
 .check-out-radio>input:checked {
     background-color: white;
+    
+   
 }
 
 .edit-form {
@@ -209,6 +214,10 @@ label {
 
 input[type=submit] {
     background-color: rgb(211, 211, 211);
+    border-color: rgb(118, 118, 118);
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 8%;
 
 }
 
