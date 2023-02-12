@@ -12,9 +12,16 @@
 {% endif %}
 
 
+<div id="show-edit-form">
+    <input
+      class="edit-toggle"
+      type="checkbox"
+      name="show-edit"
+      id="show-edit{{book_index}}"
+      hidden
+    />
 
-
-<article class="book">
+<article class="book book-display">
 
     <h3>{{ book.title }}</h3>
     <p>by {{ book.author }}</p>
@@ -35,18 +42,21 @@
     <form action="/books/{{ book_index }}">
         <input type="submit" value="View">
     </form>
-    {% else %}
+    {% endif %}
 
 
     <div class="button-label-container">
-        <label for="show-edit">Edit</label>
+        <label for="show-edit{{ book_index }}">Edit</label>
     </div>
 
 
-    {% endif %}
+    
     <form action="/books/delete/{{ book_index }}" method="post">
         <input type="submit" value="Delete">
     </form>
     </div>
 
 </article>
+
+<article class="edit-form">{% include 'edit-form.html' %}</article>
+</div>

@@ -150,7 +150,7 @@ a:hover {
     background-color: white;
 }
 
-#edit-form {
+.edit-form {
     display: none;
     visibility: hidden;
     transition: 1s all linear;
@@ -161,7 +161,7 @@ a:hover {
     display: none;
 }
 
-#show-edit:checked~article {
+.edit-toggle:checked~.edit-form {
     display: flex;
     opacity: 1;
     visibility: visible;
@@ -170,7 +170,7 @@ a:hover {
 
 
 
-#show-edit:checked~.book {
+.edit-toggle:checked~.book-display {
     display: none;
     opacity: 0;
     visibility: visible;
